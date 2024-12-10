@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+// Function to print Fibonacci series
+void printFibonacci(int n) {
+    int first = 0, second = 1, next;
+
+    // Print first two numbers
+    printf("%d %d ", first, second);
+
+    // Generate and print the rest of the Fibonacci numbers
+    for(int i = 3; i <= n; i++) {
+        next = first + second; // Calculate next Fibonacci number
+        printf("%d ", next);    // Print the next Fibonacci number
+
+        // Update first and second for the next iteration
+        first = second;
+        second = next;
+    }
+}
+
+int main() {
+    int n;
+
+    // Ask the user for the number of Fibonacci terms to print
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    // Print Fibonacci series
+    printf("Fibonacci Series: ");
+    printFibonacci(n);
+
+    return 0;
+}
